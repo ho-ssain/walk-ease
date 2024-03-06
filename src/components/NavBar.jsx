@@ -1,132 +1,90 @@
-import { useState } from "react";
-import logo from "../assets/logo.png";
-import { MdClose } from "react-icons/md";
-import { HiMenuAlt3 } from "react-icons/hi";
+/* eslint-disable no-unused-vars */
+import {
+  HeartIcon,
+  MagnifyingGlassIcon,
+  ShoppingBagIcon,
+  UserIcon,
+} from "@heroicons/react/24/outline";
+import { useEffect, useState } from "react";
 
 const NavBar = () => {
-  const [dropDown, setDropDown] = useState(false);
+  const [navState, setNavSate] = useState(false);
+
+  const onNavScroll = () => {
+    if (window.scrollY > 30) {
+      setNavSate(true);
+    } else {
+      setNavSate(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", onNavScroll);
+
+    return () => {
+      window.removeEventListener("scroll", onNavScroll);
+    };
+  }, []);
 
   return (
-    <div>
-      <nav className="w-full h-24 flex flex-col justify-center items-center lg:bg-transparent bg-white lg:absolute fixed z-20">
-        <section className="container mx-auto lg:px-6">
-          <section className="lg:w-full w-11/12 mx-auto h-full flex justify-between xl:items-center items-center text-[#12222e]">
-            {/* logo  */}
-            <div className="flex flex-col gap-y-4">
-              <span
-                className="flex items-center gap-x-2 font-bold text-2xl cursor-pointer"
-                onClick={() => (window.location.href = "/")}
-              >
-                <img src={logo} alt="logo" />
-              </span>
-            </div>
+    <>
+      <header
+        className={
+          !navState
+            ? "absolute left-0 right-0 top-7 z-50 opacity-100"
+            : "blur-effect-theme fixed left-0 right-0 top-0 z-[200] flex h-[9vh] items-center justify-center opacity-100"
+        }
+      >
+        <nav className="nike-container flex items-center justify-between">
+          <div className="flex items-center">
+            <a href="#" className="text-2xl font-semibold italic md:text-xl">
+              WalkEase
+            </a>
+          </div>
 
-            {/* menu-items  */}
-            <ul className="flex-1 flex justify-center items-center gap-16 max-lg:hidden">
-              <a
-                href="#home"
-                className="font-montserrat leading-normal text-lg text-[#b2ab9f] no-underline"
-              >
-                Home
-              </a>
-              <a
-                href="#about-us"
-                className="font-montserrat leading-normal text-lg text-[#b2ab9f] no-underline"
-              >
-                About-us
-              </a>
-              <a
-                href="#products"
-                className="font-montserrat leading-normal text-lg text-[#b2ab9f] no-underline"
-              >
-                Products
-              </a>
-              <a
-                href="#contact-us"
-                className="font-montserrat leading-normal text-lg text-[#b2ab9f] no-underline"
-              >
-                Contact-us
-              </a>
-              <a
-                href="#login"
-                className="font-montserrat leading-normal text-lg text-[#b2ab9f] no-underline"
-              >
-                Login
-              </a>
-            </ul>
-            {
-              // drop down button for mobile view
-              dropDown ? (
-                <div
-                  className="text-black lg:hidden text-[22px]  cursor-pointer"
-                  onClick={() => {
-                    setDropDown(!dropDown);
-                  }}
-                >
-                  <MdClose />
-                </div>
-              ) : (
-                <div
-                  className="text-black lg:hidden text-[22px]  cursor-pointer"
-                  onClick={() => {
-                    setDropDown(!dropDown);
-                  }}
-                >
-                  <HiMenuAlt3 />
-                </div>
-              )
-            }
-          </section>
+          <ul className="flex items-center gap-1">
+            <li className="grid items-center">
+              <MagnifyingGlassIcon
+                className={`icon-style ${navState && "text-slate-900 transition-all duration-300"}`}
+              />
+            </li>
 
-          {
-            // drop  down menu items only visible on mobile views
-            dropDown ? (
-              <div
-                className="lg:hidden w-full h-[100vh] fixed top-24 bg-white transition ease-in-out duration-100"
-                onClick={() => setDropDown(!dropDown)}
+            <li className="grid items-center">
+              <HeartIcon
+                className={`icon-style ${navState && "text-slate-900 transition-all duration-300"}`}
+              />
+            </li>
+
+            <li className="grid items-center">
+              <button
+                type="button"
+                className="relative border-none outline-none transition-all duration-300 active:scale-110"
               >
-                <div className="w-full h-[320px] flex flex-col items-baseline pt-8 gap-4 text-[#12222e]">
-                  <ul className="text-center p-0 flex flex-col justify-center w-full gap-y-8">
-                    <a
-                      href="#home"
-                      className="font-montserrat leading-normal text-lg text-[#b2ab9f] no-underline"
-                    >
-                      Home
-                    </a>
-                    <a
-                      href="#about-us"
-                      className="font-montserrat leading-normal text-lg text-[#b2ab9f] no-underline"
-                    >
-                      About-us
-                    </a>
-                    <a
-                      href="#products"
-                      className="font-montserrat leading-normal text-lg text-[#b2ab9f] no-underline"
-                    >
-                      Products
-                    </a>
-                    <a
-                      href="#contact-us"
-                      className="font-montserrat leading-normal text-lg text-[#b2ab9f] no-underline"
-                    >
-                      Contact-us
-                    </a>
-                    <a
-                      href="#login"
-                      className="font-montserrat leading-normal text-lg text-[#b2ab9f] no-underline"
-                    >
-                      Login
-                    </a>
-                  </ul>
+                <UserIcon
+                  className={`icon-style ${navState && "text-slate-900 transition-all duration-300"}`}
+                />
+              </button>
+            </li>
+
+            <li className="grid items-center">
+              <button
+                type="button"
+                className="relative border-none outline-none transition-all duration-300 active:scale-110"
+              >
+                <ShoppingBagIcon
+                  className={`icon-style ${navState && "text-slate-900 transition-all duration-300"}`}
+                />
+                <div
+                  className={`absolute right-0 top-4 flex h-4 w-4 cursor-pointer items-center justify-center rounded-full text-[0.65rem] font-medium leading-tight shadow transition-all duration-300 hover:scale-110 ${navState ? "bg-slate-900 text-slate-100 shadow-slate-900" : "bg-slate-100 text-slate-900 shadow-slate-100"}`}
+                >
+                  0
                 </div>
-              </div>
-            ) : (
-              ""
-            )
-          }
-        </section>
-      </nav>
-    </div>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </>
   );
 };
 

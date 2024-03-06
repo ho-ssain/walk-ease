@@ -46,13 +46,13 @@ const Item = ({
           <div className="flex items-center gap-3">
             <button
               type="button"
-              className="blur-effect-theme button-theme p-0.5 shadow shadow-sky-500"
+              className="blur-effect-theme button-theme p-0.5 shadow shadow-sky-100"
             >
               <ShoppingBagIcon className="icon-style text-slate-900" />
             </button>
             <button
               type="button"
-              className="blur-effect-theme button-theme px-2 py-2 text-sm text-black shadow shadow-sky-500"
+              className="blur-effect-theme button-theme px-2 py-2 text-sm text-black shadow shadow-sky-100"
             >
               {btn}
             </button>

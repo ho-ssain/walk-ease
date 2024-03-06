@@ -342,17 +342,13 @@ const story = {
 };
 
 const footerAPI = {
-  titles: [
-    { title: "About Nike" },
-    { title: "Get Help" },
-    { title: "Company" },
-  ],
+  titles: [{ title: "About Us" }, { title: "Get Help" }, { title: "Company" }],
   links: [
     [
       { link: "News" },
       { link: "Careers" },
       { link: "Investors" },
-      { link: "Prupose" },
+      { link: "Purpose" },
       { link: "Sustainability" },
     ],
     [
@@ -369,8 +365,8 @@ const footerAPI = {
       { link: "Promotions" },
       { link: "Find A Store" },
       { link: "Signup" },
-      { link: "Nike Jouneral" },
-      { link: "Send Us Feeback" },
+      { link: "Nike Journal" },
+      { link: "Send Us Feedback" },
     ],
   ],
 };
