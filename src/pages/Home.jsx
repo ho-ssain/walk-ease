@@ -1,11 +1,12 @@
-import Hero from "../components/Hero";
-import NavBar from "../components/NavBar";
+import { Hero } from "../components";
+import { heroapi } from "../data/data";
 
 const Home = () => {
   return (
     <>
-      <NavBar />
-      <Hero />
+      <main>
+        <Hero heroApi={heroapi} />
+      </main>
     </>
   );
 };

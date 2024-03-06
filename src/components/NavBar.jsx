@@ -7,10 +7,10 @@ const NavBar = () => {
   const [dropDown, setDropDown] = useState(false);
 
   return (
-    <>
+    <div>
       <nav className="w-full h-24 flex flex-col justify-center items-center lg:bg-transparent bg-white lg:absolute fixed z-20">
         <section className="container mx-auto lg:px-6">
-          <section className="lg:w-full w-11/12 mx-auto h-full flex justify-between xl:items-baseline items-center text-[#12222e]">
+          <section className="lg:w-full w-11/12 mx-auto h-full flex justify-between xl:items-center items-center text-[#12222e]">
             {/* logo  */}
             <div className="flex flex-col gap-y-4">
               <span
@@ -126,7 +126,7 @@ const NavBar = () => {
           }
         </section>
       </nav>
-    </>
+    </div>
   );
 };
 
