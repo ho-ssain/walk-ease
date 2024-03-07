@@ -1,4 +1,5 @@
 import {
+  Cart,
   FlexContent,
   Footer,
   Hero,
@@ -21,6 +22,7 @@ const Home = () => {
     <>
       <main className="relative flex flex-col gap-16">
         <NavBar />
+        <Cart />
         <Hero heroApi={heroapi} />
         <Sales endpoint={popularsales} ifExists />
         <FlexContent endpoint={highlight} ifExists />

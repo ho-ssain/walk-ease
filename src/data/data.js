@@ -32,8 +32,8 @@ import youtube from "../assets/youtube.svg";
 import messenger from "../assets/messenger.svg";
 
 const heroapi = {
-  title: "Play With Electric Nike",
-  subtitle: "Adapt 2.0 Sneakers",
+  title: "Engage with Nike",
+  subtitle: "Electric Adapt 2.0 ",
   img: heroimg,
   btntext: "Explore Product",
   videos: [
@@ -51,7 +51,7 @@ const heroapi = {
 };
 
 const popularsales = {
-  title: "Popular Sales",
+  title: "Trending Sales",
   items: [
     {
       id: "0p0x1",
@@ -90,7 +90,7 @@ const popularsales = {
 };
 
 const highlight = {
-  heading: "HIGHLIGHTS",
+  heading: "Spotlights",
   title: "NIKE AIR WITH LIMITLESS CHOICES",
   text: "Our Purpose is to move the world forward. We take action by building community, protecting our planet and increasing access to sport.",
   btn: "Explore More",
@@ -108,7 +108,7 @@ const sneaker = {
 };
 
 const toprateslaes = {
-  title: "Top Rated Sales",
+  title: "Premier Sales",
   items: [
     {
       id: "0M0x1",
@@ -246,7 +246,7 @@ const toprateslaes = {
 };
 
 const story = {
-  title: "Top Stories",
+  title: "Headline Highlights",
   news: [
     {
       title: "Jayson Tatum Debuts",

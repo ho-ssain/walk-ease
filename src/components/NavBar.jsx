@@ -7,8 +7,16 @@ import {
 } from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
 
+import { useDispatch, useSelector } from "react-redux";
+import { selectTotalQTY, setOpenCart } from "../CartSlice.js";
+
 const NavBar = () => {
   const [navState, setNavSate] = useState(false);
+  const dispatch = useDispatch();
+
+  const onCartToggle = () => {
+    dispatch(setOpenCart({ cartState: true }));
+  };
 
   const onNavScroll = () => {
     if (window.scrollY > 30) {
@@ -17,6 +25,8 @@ const NavBar = () => {
       setNavSate(false);
     }
   };
+
+  const totalQTY = useSelector(selectTotalQTY);
 
   useEffect(() => {
     window.addEventListener("scroll", onNavScroll);
@@ -70,6 +80,7 @@ const NavBar = () => {
               <button
                 type="button"
                 className="relative border-none outline-none transition-all duration-300 active:scale-110"
+                onClick={onCartToggle}
               >
                 <ShoppingBagIcon
                   className={`icon-style ${navState && "text-slate-900 transition-all duration-300"}`}
@@ -77,7 +88,7 @@ const NavBar = () => {
                 <div
                   className={`absolute right-0 top-4 flex h-4 w-4 cursor-pointer items-center justify-center rounded-full text-[0.65rem] font-medium leading-tight shadow transition-all duration-300 hover:scale-110 ${navState ? "bg-slate-900 text-slate-100 shadow-slate-900" : "bg-slate-100 text-slate-900 shadow-slate-100"}`}
                 >
-                  0
+                  {totalQTY}
                 </div>
               </button>
             </li>

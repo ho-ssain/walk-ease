@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
+import { useDispatch } from "react-redux";
+import { setAddItemToCart, setOpenCart } from "../CartSlice.js";
 import { StarIcon, ShoppingBagIcon } from "@heroicons/react/24/solid";
 
 const Item = ({
@@ -14,6 +16,16 @@ const Item = ({
   rating,
   price,
 }) => {
+  const dispatch = useDispatch();
+  const onAddToCart = () => {
+    const item = { id, title, text, img, color, shadow, price };
+    dispatch(setAddItemToCart(item));
+  };
+
+  const onCartToggle = () => {
+    dispatch(setOpenCart({ cartState: true }));
+  };
+
   return (
     <>
       <div
@@ -47,12 +59,17 @@ const Item = ({
             <button
               type="button"
               className="blur-effect-theme button-theme p-0.5 shadow shadow-sky-100"
+              onClick={() => onAddToCart()}
             >
               <ShoppingBagIcon className="icon-style text-slate-900" />
             </button>
             <button
               type="button"
-              className="blur-effect-theme button-theme px-2 py-2 text-sm text-black shadow shadow-sky-100"
+              className="blur-effect-theme button-theme rounded-xl px-2 py-1 text-sm text-black shadow shadow-sky-100"
+              onClick={() => {
+                onAddToCart();
+                onCartToggle();
+              }}
             >
               {btn}
             </button>
