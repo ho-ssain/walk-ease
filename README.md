@@ -32,7 +32,6 @@
 ## Demo
 
 - [Live Link](https://walk-ease.vercel.app/)
-- [Video demonstration](https://walk-ease.vercel.app/)
 
 ## Screenshots
 
