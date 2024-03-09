@@ -21,7 +21,31 @@
 
 ## Assets Resources
 
-1. Icon-: [HeroIcons](https://heroicons.com/){:target="\_blank"}
+1. Icon-: [HeroIcons](https://heroicons.com/)
 2. Font-: [Google Fonts](https://fonts.google.com/)
+3. Images:
+   - [purepng](https://purepng.com/)
+   - [freepik](https://www.freepik.com/)
+   - [pngwing](https://www.pngwing.com/)
+4. Slider-: [React Splide](https://splidejs.com/)
 
-<a href="https://fonts.google.com" target="_blank"> j</a>
+## Demo
+
+- [Live Link](https://walk-ease.vercel.app/)
+- [Video demonstration](https://walk-ease.vercel.app/)
+
+## Screenshots
+
+![sample-pic](./Screenshots/ss-1.jpg)
+![sample-pic](./Screenshots/ss-2.jpg)
+![sample-pic](./Screenshots/ss-3.jpg)
+![sample-pic](./Screenshots/ss-4.jpg)
+![sample-pic](./Screenshots/ss-5.jpg)
+
+## License
+
+This project is licensed under the MIT License
+
+[MIT License](LICENSE)
+
+Copyright (c) 2024 hkDev(ho-ssain)
